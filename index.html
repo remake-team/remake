@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#075B4A">
 <meta property="og:title" content="ReMake: don't bin it, ReMake it">
 <meta property="og:description" content="Step-by-step reuse ideas for household waste in Pakistan, with time, cost and CO₂ saved.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23075B4A'/%3E%3Cpath d='M74.148 43.530A25 25 0 1 1 39.435 27.342' fill='none' stroke='%23FFFFFF' stroke-width='10' stroke-linecap='round'/%3E%3Ccircle cx='70.860' cy='29.140' r='8.5' fill='%23C7F464'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23075B4A'/%3E%3Cpath d='M73.548 44.730A25 25 0 1 1 38.835 28.542' fill='none' stroke='%23FFFFFF' stroke-width='10' stroke-linecap='round'/%3E%3Ccircle cx='70.260' cy='30.340' r='8.5' fill='%23C7F464'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -41,8 +41,9 @@ button,input,select{font:inherit;color:inherit}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--white)}
 .brand:hover{color:var(--white)}
-.brand b{font:800 21px var(--head);letter-spacing:-.01em}
-.nav{display:flex;gap:2px}
+.brand b{font:800 21px/1 var(--head);letter-spacing:-.01em;display:block;text-box:trim-both cap alphabetic}
+.brand svg{display:block;flex:none}
+.nav{display:flex;gap:2px;margin-right:-12px}
 .nav a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:999px;color:var(--white);text-decoration:none;font-weight:500;font-size:15px}
 .nav a:hover{background:rgba(255,255,255,.12);color:var(--white)}
 .nav a[aria-current="page"]{background:rgba(255,255,255,.16)}
@@ -75,7 +76,7 @@ button,input,select{font:inherit;color:inherit}
   .band h1,.crumbs{max-width:calc(100% - 232px)}
   .band.home h1{max-width:none}
 }
-.band.compact .hero{padding:28px 0 64px;gap:16px}
+.band.compact .hero{padding:28px 0 40px;gap:16px}
 .band.compact h1{font-size:clamp(32px,6vw,48px);line-height:1.05}
 
 /* ---------- home ---------- */
@@ -178,14 +179,15 @@ button,input,select{font:inherit;color:inherit}
 .cats a:hover{background:var(--white)}
 .cats a[aria-current="true"]{background:var(--em);color:var(--white)}
 .cats a[aria-current="true"] span{color:var(--mist)}
-.bar{display:flex;flex-direction:column;gap:14px;margin-bottom:12px}
+.bar{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
 .bar h2{font-weight:800;font-size:clamp(22px,4vw,28px);line-height:1.15}
 .ctl{display:flex;flex-wrap:wrap;gap:8px}
 .ctl label,.mobcats label{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--grey)}
 select{height:44px;padding:0 36px 0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23172A27' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;-webkit-appearance:none;appearance:none;font-size:15px;color:var(--ink);font-weight:500;max-width:100%}
-.mobcats{margin-bottom:12px}
+.mobcats{margin:0}
 .mobcats select{flex:1;min-width:0}
-.active{font-size:14px;color:var(--grey);margin-bottom:16px;min-height:20px}
+.active{font-size:14px;color:var(--grey);margin:-8px 0 12px}
+.active:empty{display:none}
 .linkbtn{border:0;background:none;padding:6px 4px;color:var(--em);font-weight:600;text-decoration:underline;cursor:pointer;font-size:14px}
 .empty{background:var(--white);border-radius:var(--r);padding:28px}
 .empty h3{font-size:22px;margin-bottom:10px}
@@ -251,7 +253,8 @@ select{height:44px;padding:0 36px 0 14px;border-radius:999px;border:1.5px solid 
 .pager span{font-size:13px;color:var(--grey)}
 .pager b{font:700 16px/1.3 var(--head);overflow:hidden;text-overflow:ellipsis}
 
-.evc li a,.srcs a,.calc .ex a{display:inline-block;padding:3px 0}
+.calc .ex a{display:inline-block;padding:3px 0}
+.evc li a,.srcs li a{display:block;padding:3px 0}
 footer{margin-top:80px;border-top:1px solid var(--line)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;padding-top:28px;padding-bottom:40px;font-size:14px;color:var(--grey)}
 footer a{font-weight:600;text-decoration:none}
@@ -266,7 +269,7 @@ footer a{font-weight:600;text-decoration:none}
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#" aria-label="ReMake home">
-      <svg width="38" height="38" viewBox="14 14 72 72" aria-hidden="true"><path d="M74.148 43.530A25 25 0 1 1 39.435 27.342" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/><circle cx="70.860" cy="29.140" r="8.5" fill="#C7F464"/></svg>
+      <svg width="34" height="34" viewBox="19 19.3 62 62" aria-hidden="true"><path d="M74.148 43.530A25 25 0 1 1 39.435 27.342" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/><circle cx="70.860" cy="29.140" r="8.5" fill="#C7F464"/></svg>
       <b>ReMake</b>
     </a>
     <nav class="nav" aria-label="Main">
@@ -321,7 +324,7 @@ footer a{font-weight:600;text-decoration:none}
       <div>
         <span class="k">The evidence</span>
         <h2 id="abTitle">How the numbers work</h2>
-        <p class="intro">CO₂ saved is the item’s weight times a published emission factor: the difference between sending that material to landfill and recycling it. We use the US EPA’s WARM model (version 16), and UK government factors for clothing and textiles.</p>
+        <p class="intro">CO₂ saved is the item’s weight times a published emission factor: the difference between sending that material to landfill and recycling it. We use the US EPA’s WARM model (version 16), and UK government factors for clothing and textiles, which WARM does not cover. We found no published factors of this kind for Pakistan, so we use these widely cited international ones and label every figure as an estimate.</p>
       </div>
       <div class="calc" id="calc"></div>
       <div class="nums" id="nums"></div>
